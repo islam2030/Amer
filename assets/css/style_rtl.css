@@ -29,6 +29,7 @@
     html {
         height: 100%;
         box-sizing: border-box;
+        direction: rtl;
     }
     
     body {
@@ -357,6 +358,23 @@
         padding: 0px 10px;
     }
     
+    .inputMaterial:focus~.label_blue,
+    .inputMaterial:valid~.label_blue {
+        top: -8px;
+        color: rgba(1, 84, 149, 1);
+        background: #53ccff !important;
+        padding: 0px 10px;
+    }
+    
+    .inputMaterial:focus~.label_blue,
+    .inputMaterial~.label_blue.active,
+    .inputMaterial:valid~.label_blue {
+        top: -8px;
+        color: rgba(1, 84, 149, 1);
+        background: #53ccff !important;
+        padding: 0px 10px;
+    }
+    
     .select-wrapper+label {
         position: absolute;
         top: -23px;
@@ -395,15 +413,47 @@
         position: relative;
     }
     
+    .bg-login {
+        background-image: radial-gradient(88% 288%, #53CCFF 33%, #015495 100%);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        content: "";
+        left: 0;
+        bottom: 0;
+        filter: blur(0px);
+    }
+    
+    .lang {
+        float: right;
+    }
+    
+    .lang .dropdown .nav-link {
+        color: #fff !important;
+        font-weight: 100
+    }
+    
+    .lang .dropdown-menu {
+        text-align: right;
+        right: 0 !important;
+    }
+    
+    .lang_pos {
+        right: 0 !important;
+    }
+    
     .backgroundMark {
         position: absolute;
         top: 0;
         left: 0;
-        /* bottom: 0; */
+        bottom: 0;
         min-height: 100vh;
-        background: url(../img/bg.png) no-repeat center bottom;
+        background: url(../img/City-Dubai-transparent.png) no-repeat center bottom;
         background-size: contain;
         width: 100%;
+        opacity: .1;
+        filter: blur(15px);
     }
     
     .loges {
@@ -412,8 +462,8 @@
     
     .text-logo h2 {
         font-size: 18px;
-        font-weight: bold;
-        color: rgba(56, 56, 56, 1);
+        font-weight: 100;
+        color: #fff;
         text-align: center;
         line-height: 28px;
     }
@@ -423,7 +473,7 @@
         color: rgba(56, 56, 56, 1);
         text-align: center;
         line-height: 20px;
-        font-weight: bold;
+        font-weight: 100;
         margin-bottom: 20px !important;
     }
     
@@ -453,7 +503,7 @@
         color: rgba(255, 255, 255, 1);
         text-align: center;
         line-height: 16px;
-        font-weight: bold;
+        font-weight: 400;
     }
     
     .login:hover {
@@ -470,7 +520,7 @@
         color: rgba(56, 56, 56, 1);
         text-align: right;
         line-height: 20px;
-        font-weight: bold;
+        font-weight: 400;
     }
     
     [type="checkbox"].filled-in:checked+span:not(.lever):after {
@@ -484,10 +534,10 @@
     
     .forgetpassword {
         font-size: 14px;
-        color: rgba(56, 56, 56, 1);
+        color: #fff;
         text-align: center;
         line-height: 20px;
-        font-weight: bold;
+        font-weight: 100;
         margin-top: 30px;
         display: block;
         transition: all .3s ease-in-out;
@@ -604,7 +654,7 @@
     .navbar-light .navbar-brand {
         color: rgba(255, 255, 255, 0.9) !important;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 100;
         color: rgba(255, 255, 255, 1);
         text-align: right;
     }
@@ -726,7 +776,7 @@
     
     .content-wrapper .table td,
     .content-wrapper .table th {
-        text-align: right;
+        text-align: center;
         border: 0;
         font-weight: 100;
         padding-right: 15px;
@@ -740,12 +790,29 @@
         border: 0;
     }
     
+    .table {
+        table-layout: fixed;
+    }
+    
     .table td,
     .table th {
         padding: .75rem;
         vertical-align: middle;
         border-radius: 0;
         font-size: 14px;
+        text-align: center
+    }
+    
+    .table_bg_color {
+        background: #636363;
+        padding: 10px 0;
+        position: relative;
+        top: 11px;
+    }
+    
+    .tbody_bg {
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.22);
     }
     
     .select-wrapper input.select-dropdown,
@@ -813,10 +880,19 @@
     }
     
     .btn-gray:hover,
+    .btn_border:hover,
+    .btn_border:focus,
     .btn-gray:focus {
-        background: rgba(178, 184, 186, 1);
+        background: rgb(37, 30, 84, 1);
+        color: rgb(255, 255, 255) !important;
+        box-shadow: none;
+    }
+    
+    .btn_border {
+        background: rgb(255, 255, 255);
         color: rgba(37, 30, 84, 1);
         box-shadow: none;
+        border: 1px solid rgba(37, 30, 84, 1);
     }
     
     .dataTables_length,
@@ -976,3 +1052,66 @@
         width: 10% !important;
         margin-right: 5px;
     }
+    
+    .footer .image_width {
+        width: 5% !important;
+    }
+    /* start content */
+    
+    .content-wrapper .container-fluid .content .card-body {
+        padding: 50px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-bottom: 30px;
+        text-align: center;
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+    }
+    
+    .content-wrapper .container-fluid .content .card-body:hover {
+        background: rgba(255, 196, 0, 0.2);
+    }
+    
+    .content-wrapper .container-fluid .content .card-body i {
+        font-size: 100px;
+        color: #1a6539;
+    }
+    
+    .content-wrapper .container-fluid .content .card-body h4 {
+        font-weight: 800;
+        color: #1a6539;
+        margin-bottom: 0;
+        font-size: 18px
+    }
+    
+    .content-wrapper .container-fluid .content .card-body p {
+        margin-bottom: 5px;
+        color: #212529;
+        font-weight: 400
+    }
+    
+    .image-top {
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    /* end content */
+    /* start Human resources details */
+    
+    .details .row div .card-body {
+        padding-bottom: 15px !important;
+        border-radius: 5px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .details .row .table-details table tr td,
+    .details .row .table-details table tr th {
+        text-align: right;
+    }
+    /* End Human resources details */
